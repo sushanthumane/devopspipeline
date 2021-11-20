@@ -1,0 +1,20 @@
+---
+ - name: Apache Webserver Setup
+   hosts: webservers
+   become: yes
+   tasks:
+      - name: Installing required package
+        apt: 
+           name: apache2
+           state: latest
+
+      - name: Start webservice
+        service:
+           name: apache2
+           state: started
+           enabled: yes
+
+      - name: Copy webpage to document root
+        copy: 
+           src: /home/pavanwankhade4u/index.html
+           dest: /var/www/html/index.html
