@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Git SCM ') {
       steps {
-        git(url: 'https://github.com/pavansw/simpleMavenJunit.git', branch: 'master', changelog: true, poll: true)
+        git(url: 'https://github.com/sushanthumane/devopspipeline.git', branch: 'master', changelog: true, poll: true)
         sleep 3
       }
     }
